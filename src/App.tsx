@@ -9,7 +9,7 @@ function App() {
       </div>
 
       <div className="page-views">
-        <div className="section-top-page">
+        <div className="section-top-pageviews">
           <h2>100k pageviews</h2>
           <div className="range-section">
             <input
@@ -39,6 +39,7 @@ function App() {
 
         <hr />
 
+        <div className="section-bottom-pageviews">
         <ul>
           <li>Unlimited Websites</li>
           <li>100% data ownership</li>
@@ -46,6 +47,7 @@ function App() {
         </ul>
 
         <button>Start my trial</button>
+        </div>
       </div>
     </>
   );
