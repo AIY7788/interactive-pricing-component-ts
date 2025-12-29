@@ -9,29 +9,31 @@ function App() {
       </div>
 
       <div className="page-views">
-        <h2>100k pageviews</h2>
-        <div className="range-section">
-          <input
-            type="range"
-            className="slice-range"
-            min={0}
-            max={100}
-            // value={20}
-          />
-        </div>
+        <div className="section-top-page">
+          <h2>100k pageviews</h2>
+          <div className="range-section">
+            <input
+              type="range"
+              className="slice-range"
+              min={0}
+              max={100}
+              // value={20}
+            />
+          </div>
 
-        <p>
-          <span className="price">$16.00</span> / month
-        </p>
+          <p className="price-contain">
+            <span className="price">$16.00</span> / month
+          </p>
+        </div>
 
         <div className="billing">
           <p>Monthly Billing</p>
-          <label className="toggle-section">
+          <label className="toggle-switch">
             <input type="checkbox" />
             <span className="slice-toggle"></span>
           </label>
           <p>
-            Yearly Billing <span>-25%</span>
+            Yearly Billing <span className='discount'>-25%</span>
           </p>
         </div>
 
