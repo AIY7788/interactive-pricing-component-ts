@@ -76,6 +76,7 @@ h1 {
 
 h2 {
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 p, ul, h2, button {
