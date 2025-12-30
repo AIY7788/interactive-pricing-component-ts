@@ -1,5 +1,5 @@
 #root {
-  max-width: 580px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 2rem 2rem 8rem;
 }
@@ -10,7 +10,7 @@
 }
 
 .hero-section p {
-  padding: 0 min(4rem, 12vw);
+  padding: 0 min(6rem, 16vw);
 }
 
 .page-views {
@@ -21,13 +21,11 @@
 }
 
 .section-top-pageviews {
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
   gap: 3rem;
-}
-
-.range-section {
-  padding: 0 2rem;
 }
 
 .slice-range {
@@ -112,8 +110,12 @@ p:has(.discount) {
   padding: 0 0.5rem;
   border-radius: 12px;
   position: absolute;
-  right: -6px;
+  right: -12px;
   top: -12px;
+}
+
+.discount span {
+  display: none;
 }
 
 .toggle-switch {
@@ -177,4 +179,51 @@ p:has(.discount) {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .hero-section {
+    margin-bottom: 2rem;
+  }
+
+  .page-views {
+    padding: 4rem 0;
+  }
+
+  .section-top-pageviews {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 4rem;
+    text-align: start;
+  }
+
+  .range-section {
+    grid-column: 1/span 2;
+  }
+
+  .billing {
+    margin-top: 4rem;
+  }
+
+  .price-contain {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .discount {
+    top: 50%;
+    right: -90px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .discount span {
+    display: block;
+  }
+
+  .section-bottom-pageviews {
+    padding: 0 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

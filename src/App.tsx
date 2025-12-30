@@ -1,4 +1,4 @@
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
@@ -33,24 +33,27 @@ function App() {
             <span className="slice-toggle"></span>
           </label>
           <p>
-            Yearly Billing <span className='discount'>-25%</span>
+            Yearly Billing
+            <span className="discount">
+              -25% <span>discount</span>
+            </span>
           </p>
         </div>
 
         <hr />
 
         <div className="section-bottom-pageviews">
-        <ul>
-          <li>Unlimited Websites</li>
-          <li>100% data ownership</li>
-          <li>Email Reports</li>
-        </ul>
+          <ul>
+            <li>Unlimited Websites</li>
+            <li>100% data ownership</li>
+            <li>Email Reports</li>
+          </ul>
 
-        <button>Start my trial</button>
+          <button>Start my trial</button>
         </div>
       </div>
     </>
   );
 }
 
-export default App
+export default App;
