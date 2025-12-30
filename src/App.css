@@ -50,6 +50,13 @@
 }
 
 @media (min-width: 48rem) {
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .hero-section {
     margin-bottom: 2rem;
   }
