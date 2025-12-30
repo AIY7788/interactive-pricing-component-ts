@@ -6,7 +6,10 @@ type RangeBar = {
 };
 
 function RangeBar({ valueRange, setValue }: RangeBar) {
-  const valuePercentage = (valueRange / 1_000_000) * 100;
+  const MIN = 10_000;
+  const MAX = 1_000_000;
+
+  const valuePercentage = ((valueRange - MIN) / (MAX - MIN)) * 100;
 
   const handleOnChang = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(parseInt(e.target.value));
@@ -21,8 +24,8 @@ function RangeBar({ valueRange, setValue }: RangeBar) {
         onChange={handleOnChang}
         type="range"
         className="slice-range"
-        min={10_000}
-        max={1_000_000}
+        min={MIN}
+        max={MAX}
         value={valueRange}
       />
     </div>
