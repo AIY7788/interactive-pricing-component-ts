@@ -2,28 +2,29 @@ import "./App.css";
 import RangeBar from "./components/RangeBar";
 import ToggleSwitch from "./components/ToggleSwitch" 
 import formatNuberViews from "./utils/formatViews";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useDebounce } from "./hooks/useDebounce";
 
 function App() {
   const [valueRange, setValue] = useState<number>(100000);
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [price, setPrice] = useState<number>(0)
+  
+  const debouncedValueRange = useDebounce(valueRange);
+  
+  const calculateMoney = (valueRange: number, isYearly: boolean) => {
+    let monthlyPrice = 0;
+    
+    if (valueRange < 50_000) monthlyPrice = 8;
+    else if (valueRange < 100_000) monthlyPrice = 12;
+    else if (valueRange < 500_000) monthlyPrice = 16;
+    else if (valueRange < 1_000_000) monthlyPrice = 24;
+    else monthlyPrice = 36;
+    
+    return isYearly ? monthlyPrice * 12 * 0.75 : monthlyPrice;
+  };
 
-  useEffect(() => {
-    const calculateMoney = (): void => {
-      let monthlyPrice = 0;
-
-      if (valueRange < 50_000) monthlyPrice = 8;
-      else if (valueRange < 100_000) monthlyPrice = 12;
-      else if (valueRange < 500_000) monthlyPrice = 16;
-      else if (valueRange < 1_000_000) monthlyPrice = 24;
-      else monthlyPrice = 36;
-
-      setPrice(isYearly ? monthlyPrice * 12 * 0.75 : monthlyPrice);
-    };
-    calculateMoney()
-  }, [valueRange, isYearly])
-
+  const price = calculateMoney(debouncedValueRange, isYearly);
+  
   return (
     <>
       <div className="hero-section">
