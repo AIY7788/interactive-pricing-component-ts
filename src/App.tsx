@@ -39,7 +39,7 @@ function App() {
           <RangeBar valueRange={valueRange} setValue={setValue} />
 
           <p className="price-contain">
-            <span className="price">${price.toFixed(2)}</span> / month
+            <span className="price">${price.toFixed(2)}</span> / {isYearly? "year" : "month"}
           </p>
         </div>
 
