@@ -1,6 +1,6 @@
 import "./App.css";
 import RangeBar from "./components/RangeBar";
-import ToggleSwitch from "./components/ToggleSwitch" 
+import ToggleSwitch from "./components/ToggleSwitch";
 import formatNuberViews from "./utils/formatViews";
 import { useState } from "react";
 import { useDebounce } from "./hooks/useDebounce";
@@ -8,23 +8,23 @@ import { useDebounce } from "./hooks/useDebounce";
 function App() {
   const [valueRange, setValue] = useState<number>(100000);
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  
+
   const debouncedValueRange = useDebounce(valueRange);
-  
+
   const calculateMoney = (valueRange: number, isYearly: boolean) => {
     let monthlyPrice = 0;
-    
+
     if (valueRange < 50_000) monthlyPrice = 8;
     else if (valueRange < 100_000) monthlyPrice = 12;
     else if (valueRange < 500_000) monthlyPrice = 16;
     else if (valueRange < 1_000_000) monthlyPrice = 24;
     else monthlyPrice = 36;
-    
+
     return isYearly ? monthlyPrice * 12 * 0.75 : monthlyPrice;
   };
 
   const price = calculateMoney(debouncedValueRange, isYearly);
-  
+
   return (
     <>
       <div className="hero-section">
@@ -39,7 +39,8 @@ function App() {
           <RangeBar valueRange={valueRange} setValue={setValue} />
 
           <p className="price-contain">
-            <span className="price">${price.toFixed(2)}</span> / {isYearly? "year" : "month"}
+            <span className="price">${price.toFixed(2)}</span> /{" "}
+            {isYearly ? "year" : "month"}
           </p>
         </div>
 
@@ -56,6 +57,14 @@ function App() {
 
           <button>Start my trial</button>
         </div>
+      </div>
+      <div className="attribution">
+        Challenge by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by{" "}
+        <a href="https://www.frontendmentor.io/profile/AIY7788">ALEX_KNK</a>.
       </div>
     </>
   );
