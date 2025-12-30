@@ -1,19 +1,13 @@
 import "./App.css";
 import RangeBar from "./components/RangeBar";
 import ToggleSwitch from "./components/ToggleSwitch" 
+import formatNuberViews from "./utils/formatViews";
 import { useState, useEffect } from "react";
 
 function App() {
   const [valueRange, setValue] = useState<number>(100000);
   const [isYearly, setIsYearly] = useState<boolean>(false);
   const [price, setPrice] = useState<number>(0)
-
-  const formatNuberViews = (views: number) => {
-    return new Intl.NumberFormat("en", {
-      notation: "compact",
-      maximumFractionDigits: 1,
-    }).format(views);
-  };
 
   useEffect(() => {
     const calculateMoney = (): void => {
