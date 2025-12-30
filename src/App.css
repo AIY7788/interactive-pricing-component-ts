@@ -54,6 +54,10 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    align-items: center;
+>>>>>>> bebeca098982d4ff2edb0d48150bd48b65fcc757
     justify-content: center;
   }
 
