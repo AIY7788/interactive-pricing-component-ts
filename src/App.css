@@ -15,7 +15,7 @@
 
 .page-views {
   background-color: var(--white);
-  box-shadow: 10px 10px 40px 0.1px var(--blue-light-slider);
+  box-shadow: 0 10px 16px 4px var(--blue-light-slider);
   padding: 2.5rem 0;
   border-radius: 8px;
 }
