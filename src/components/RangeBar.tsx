@@ -8,7 +8,7 @@ type RangeBar = {
 function RangeBar({ valueRange, setValue }: RangeBar) {
   const valuePercentage = (valueRange / 1_000_000) * 100;
 
-  const handleOnchang = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChang = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(parseInt(e.target.value));
   };
  
@@ -18,7 +18,7 @@ function RangeBar({ valueRange, setValue }: RangeBar) {
         style={{
           background: `linear-gradient(90deg, var(--cyan-soft) ${valuePercentage}%, var(--blue-light-slider) ${valuePercentage}%)`,
         }}
-        onChange={handleOnchang}
+        onChange={handleOnChang}
         type="range"
         className="slice-range"
         min={10_000}

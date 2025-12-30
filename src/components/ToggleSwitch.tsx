@@ -6,7 +6,7 @@ type IsYearly = {
 };
 
 function ToggleSwitch({ isYearly, setIsYearly }: IsYearly) {
-  const handleOnchang = () => {
+  const handleOnChang = () => {
     setIsYearly(isYearly ? false : true);
   };
 
@@ -14,7 +14,7 @@ function ToggleSwitch({ isYearly, setIsYearly }: IsYearly) {
     <div className="billing">
       <p>Monthly Billing</p>
       <label className="toggle-switch">
-        <input onChange={handleOnchang} type="checkbox" checked={isYearly} />
+        <input onChange={handleOnChang} type="checkbox" checked={isYearly} />
         <span className="slice-toggle"></span>
       </label>
       <p>
