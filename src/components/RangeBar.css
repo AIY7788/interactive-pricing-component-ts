@@ -44,3 +44,9 @@
 .slice-range::-moz-range-thumb:active {
   cursor: grabbing;
 }
+
+@media (min-width: 48rem) {
+  .range-section {
+    grid-column: 1/span 2;
+  }
+}

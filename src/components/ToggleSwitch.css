@@ -81,3 +81,21 @@ p:has(.discount) {
   -ms-transform: translateX(18px);
   transform: translateX(18px);
 }
+
+@media (min-width: 48rem) {
+  .billing {
+    margin-top: 4rem;
+  }
+
+  .discount {
+    top: 50%;
+    right: -90px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .discount span {
+    display: block;
+  }
+}
