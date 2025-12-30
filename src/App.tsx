@@ -1,6 +1,35 @@
 import "./App.css";
+import RangeBar from "./components/RangeBar";
+import ToggleSwitch from "./components/ToggleSwitch" 
+import { useState, useEffect } from "react";
 
 function App() {
+  const [valueRange, setValue] = useState<number>(100000);
+  const [isYearly, setIsYearly] = useState<boolean>(false);
+  const [price, setPrice] = useState<number>(0)
+
+  const formatNuberViews = (views: number) => {
+    return new Intl.NumberFormat("en", {
+      notation: "compact",
+      maximumFractionDigits: 1,
+    }).format(views);
+  };
+
+  useEffect(() => {
+    const calculateMoney = (): void => {
+      let monthlyPrice = 0;
+
+      if (valueRange < 50_000) monthlyPrice = 8;
+      else if (valueRange < 100_000) monthlyPrice = 12;
+      else if (valueRange < 500_000) monthlyPrice = 16;
+      else if (valueRange < 1_000_000) monthlyPrice = 24;
+      else monthlyPrice = 36;
+
+      setPrice(isYearly ? monthlyPrice * 12 * 0.75 : monthlyPrice);
+    };
+    calculateMoney()
+  }, [valueRange, isYearly])
+
   return (
     <>
       <div className="hero-section">
@@ -10,35 +39,16 @@ function App() {
 
       <div className="page-views">
         <div className="section-top-pageviews">
-          <h2>100k pageviews</h2>
-          <div className="range-section">
-            <input
-              type="range"
-              className="slice-range"
-              min={0}
-              max={100}
-              // value={20}
-            />
-          </div>
+          <h2>{formatNuberViews(valueRange)} pageviews</h2>
+
+          <RangeBar valueRange={valueRange} setValue={setValue} />
 
           <p className="price-contain">
-            <span className="price">$16.00</span> / month
+            <span className="price">${price.toFixed(2)}</span> / month
           </p>
         </div>
 
-        <div className="billing">
-          <p>Monthly Billing</p>
-          <label className="toggle-switch">
-            <input type="checkbox" />
-            <span className="slice-toggle"></span>
-          </label>
-          <p>
-            Yearly Billing
-            <span className="discount">
-              -25% <span>discount</span>
-            </span>
-          </p>
-        </div>
+        <ToggleSwitch isYearly={isYearly} setIsYearly={setIsYearly} />
 
         <hr />
 
