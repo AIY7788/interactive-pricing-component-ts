@@ -19,7 +19,7 @@
   appearance: none;
   width: 36px;
   height: 36px;
-  background: url("/images/icon-slider.svg") no-repeat center;
+  background: url("/interactive-pricing-component-ts/images/icon-slider.svg") no-repeat center;
   background-color: var(--cyan-strong);
   border-radius: 50%;
   box-shadow: 4px 4px 20px 2px var(--cyan-strong);
@@ -33,7 +33,7 @@
 .slice-range::-moz-range-thumb {
   width: 36px;
   height: 36px;
-  background: url("/images/icon-slider.svg") no-repeat center;
+  background: url("/interactive-pricing-component-ts/images/icon-slider.svg") no-repeat center;
   background-color: var(--cyan-strong);
   border-radius: 50%;
   box-shadow: 6px 6px 40px hsla(var(--cyan-strong), 0.1),
