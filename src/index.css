@@ -29,7 +29,8 @@
 
   /* ===== Typography ===== */
   --font-family-base: 'Manrope', sans-serif;
-  --font-size-intro: 1.5rem;
+  --font-size-sm: 1.3rem;
+  --font-size-md: 1.5rem;
 
   --font-weight-semibold: 600;
   --font-weight-extrabold: 800;
@@ -68,7 +69,7 @@ body::before {
 }
 
 h1 {
-  font-size: min(2.8rem , 6vw);
+  font-size: min(2.4rem , 6vw);
   font-weight: var(--font-weight-extrabold);
   color: var(--blue-dark);
 }
@@ -79,7 +80,7 @@ h2 {
 
 p, ul, h2 {
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-intro);
+  font-size: var(--font-size-sm);
   color: var(--blue-gray-text);
 }
 
@@ -109,4 +110,10 @@ button {
 
 button:hover {
   color: var(--white);
+}
+
+@media (min-width: 48rem) {
+  ul {
+    text-align: start;
+  }
 }
